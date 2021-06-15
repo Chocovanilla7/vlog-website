@@ -1,0 +1,20 @@
+<%-include("partial/header")-%>
+<style>
+  div {
+    width: 500px;
+    height: 100 px;
+    overflow: auto;
+  }
+</style>
+
+<h1>Home</h1>
+
+<p><%=homeContent%></p>
+<div>
+  <% PostContent.forEach((post) => { %>
+  <h1><%=post.postTitle%></h1>
+  <p><%=post.postBody.slice(0,100) + "..."%><a href="/post/<%=post.postTitle%>">Read More</a></p>
+
+  <% }); %>
+</div>
+<%-include("partial/footer")-%>
